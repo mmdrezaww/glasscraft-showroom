@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/ui/navigation";
 import Footer from "@/components/ui/footer";
 import ProductCard from "@/components/product-card";
+import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle, Star, Shield, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-glass.jpg";
 import temperedGlass from "@/assets/tempered-glass.jpg";
@@ -86,13 +87,17 @@ const Index = () => {
             ارائه دهنده محصولات شیشه‌ای با کیفیت بالا و فناوری روز دنیا برای پروژه‌های ساختمانی و صنعتی
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="text-lg px-8">
-              مشاهده محصولات
-              <ArrowLeft className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              درخواست مشاوره
-            </Button>
+            <Link to="/products">
+              <Button size="lg" className="text-lg px-8">
+                مشاهده محصولات
+                <ArrowLeft className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button size="lg" variant="outline" className="text-lg px-8">
+                درخواست مشاوره
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -150,10 +155,12 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" variant="outline">
-              مشاهده همه محصولات
-              <ArrowLeft className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/products">
+              <Button size="lg" variant="outline">
+                مشاهده همه محصولات
+                <ArrowLeft className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -191,12 +198,16 @@ const Index = () => {
             تیم ما آماده ارائه بهترین راه‌حل‌های شیشه‌ای برای پروژه شما است
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">
-              درخواست مشاوره رایگان
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              تماس با ما
-            </Button>
+            <Link to="/contact">
+              <Button size="lg" className="text-lg px-8">
+                درخواست مشاوره رایگان
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button size="lg" variant="outline" className="text-lg px-8">
+                تماس با ما
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -9,11 +10,12 @@ interface ProductCardProps {
   price: string;
   features: string[];
   category: string;
+  href?: string;
 }
 
-const ProductCard = ({ title, description, image, price, features, category }: ProductCardProps) => {
-  return (
-    <Card className="group h-full overflow-hidden bg-card border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
+const ProductCard = ({ title, description, image, price, features, category, href = "/products" }: ProductCardProps) => {
+  const CardComponent = () => (
+    <Card className="group h-full overflow-hidden bg-card border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg cursor-pointer">
       <CardHeader className="p-0">
         <div className="relative overflow-hidden">
           <img 
@@ -51,6 +53,14 @@ const ProductCard = ({ title, description, image, price, features, category }: P
         </Button>
       </CardFooter>
     </Card>
+  );
+
+  return href ? (
+    <Link to={href} className="block h-full">
+      <CardComponent />
+    </Link>
+  ) : (
+    <CardComponent />
   );
 };
 
