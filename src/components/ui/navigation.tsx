@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./button";
 import { Sheet, SheetContent, SheetTrigger } from "./sheet";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 
 const Navigation = () => {
@@ -12,6 +12,7 @@ const Navigation = () => {
     { href: "/", label: "خانه" },
     { href: "/products", label: "محصولات" },
     { href: "/services", label: "خدمات" },
+    { href: "/blog", label: "وبلاگ" },
     { href: "/about", label: "درباره ما" },
     { href: "/contact", label: "تماس با ما" },
   ];
@@ -41,9 +42,14 @@ const Navigation = () => {
               {item.label}
             </Link>
           ))}
-          <Button variant="default" size="sm">
-            درخواست قیمت
-          </Button>
+          <div className="flex items-center space-x-2 space-x-reverse">
+            <Button variant="ghost" size="sm">
+              <ShoppingCart className="h-4 w-4" />
+            </Button>
+            <Button variant="default" size="sm">
+              درخواست قیمت
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
